@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg"
+        tools:context=".MainActivity">
+
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/iv_title"
+        android:src="@mipmap/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="00:00:00"
+        android:id="@+id/tv_time"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_title"
+        android:layout_width="wrap_content"
+        android:background="@mipmap/time_pane"
+        android:layout_height="wrap_content"/>
+
+
+
+        <com.example.admin.balapuzzlegame.PuzzleLayout
+            android:id="@+id/puzzle"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_time"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:visibility="gone"
+            app:layout_constraintRight_toLeftOf="@id/btn_original"
+            android:id="@+id/btn_reset"
+            android:onClick="reset"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/puzzle"
+            android:text="重置"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="@id/spinner"
+            android:onClick="originalIv"
+            app:layout_constraintLeft_toRightOf="@id/btn_reset"
+            app:layout_constraintTop_toBottomOf="@id/puzzle"
+            android:id="@+id/btn_original"
+            android:text="原圖"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Spinner
+            android:visibility="gone"
+            android:gravity="center"
+            android:id="@+id/spinner"
+            android:entries="@array/mode_type"
+            app:layout_constraintTop_toBottomOf="@id/puzzle"
+            app:layout_constraintLeft_toRightOf="@id/btn_original"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvLevel"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/ivCelebrate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@mipmap/celebrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    </android.support.constraint.ConstraintLayout>
